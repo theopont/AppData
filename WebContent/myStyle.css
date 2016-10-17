@@ -1,0 +1,11 @@
+@CHARSET "ISO-8859-1";
+h1{color: orange;}
+.mainStyle{color: blue; font-size: 25px; font}
+.erro{color: red;}
+
+table, th, td {border: 1px solid black;
+               border-collapse: collapse;
+               al}
+               
+table#login tr, th, td{border : 0px}
+table#loginSubmit td{rowspan="3";  align="center"}
