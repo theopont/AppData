@@ -8,4 +8,4 @@ table, th, td {border: 1px solid black;
                al}
                
 table#login tr, th, td{border : 0px}
-table#loginSubmit td{rowspan="3";  align="center"}
+table#loginSubmit td{rowspan:"3";  align:"center"}
