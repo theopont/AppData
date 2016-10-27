@@ -8,6 +8,7 @@
 </head>
 <body class="mainStyle">
 	<div class="ui-input-btn ui-btn ui-corner-all">
+	<form id="form" name="form">
 	<table data-role="table" id="login">
 		<thead>
 			<tr>
@@ -15,9 +16,6 @@
 			</tr>
 		</thead>
 		<tbody>
-
-				
-			
 			<tr>
 				<td>User</td>
 				<td>:</td>
@@ -29,11 +27,33 @@
 				<td><input type="password" name="passwd"><br></td>
 			</tr>
 			<tr>
-				<td id="loginSubmit" colspan="3" align="right"> <input data-enhanced="true" type="submit" value="Submit" id="button-inlog"/></td>
+				<td id="loginSubmit" colspan="3" align="right"> <input onclick="formSubmit()" type="button" value="Submit" /></td>
 			</tr>
 		</tbody>
 	</table>
+	</form>
 	
+	<script>
+function formSubmit() {
+  var firstName = document.getElementById("userName").value;
+  var lastName = document.getElementById("passwd").value;
+		
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      var json = JSON.parse(this.responseText)
+      var text = ""
+      for (var i = 0; i < json.length; i++) {
+        text += "<p>" + json[i].userName + " " + json[i].passwd + "</p>"
+      }
+      document.getElementById("demo").innerHTML = text
+    }
+  };
+  xhttp.open("POST", "/restService/rest/HelloWorld/person/1", true);
+  xhttp.setRequestHeader("Content-Type", "application/json");
+  xhttp.send(JSON.stringify({userName:userName, passwdName:passwdName}));
+}
+</script>
 	</div>
 
 </body>

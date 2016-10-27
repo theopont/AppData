@@ -1,4 +1,5 @@
 @CHARSET "ISO-8859-1";
+footer {display: block;}
 h1{color: orange;}
 .mainStyle{color: blue; font-size: 25px; font}
 .erro{color: red;}
