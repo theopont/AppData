@@ -5,11 +5,61 @@
 <link rel="stylesheet" href="myStyle.css">
 <title>Log in</title>
 
+<style>
+
+	nav {
+    float: left;
+    max-width: 160px;
+    margin: 0;
+    padding: 1em;
+	}
+	nav ul {
+    	list-style-type: none;
+    	//margin: 0;
+    	padding: 0;
+    	//overflow: hidden;
+    	//background-color: #333;
+    	//position: fixed;
+    	//top: 0;
+    	//width: 100%;
+	}
+
+	nav li {
+    	//float: left;
+	}
+
+	nav li a {
+    	display: block;
+    	//color: white;
+    	text-align: center;
+    	padding: 14px 16px;
+    	text-decoration: none;
+	}
+
+	nav li a:hover {
+    	background-color: #111;
+    	color: green;
+	}
+</style>
+
 </head>
 <body class="mainStyle">
-	<div class="ui-input-btn ui-btn ui-corner-all">
-	<form id="form" name="form">
-	<table data-role="table" id="login">
+	<div>
+		<header>
+   <h1>AppData</h1>
+</header>
+		<nav>
+		<ul>
+			<li> <a href="#login"> Login </a> </li>
+			<li> <a href="#zoeken"> Zoeken </a> </li>
+			<li> <a href="#link"> Link 3 </a> </li>
+		</ul> 
+		</nav>
+		
+		
+		
+		<form id="form" name="form">
+		<table data-role="table" id="login">
 		<thead>
 			<tr>
 				<th colspan="3">Inloggen</th>
@@ -54,7 +104,9 @@ function formSubmit() {
   xhttp.send(JSON.stringify({userName:userName, passwdName:passwdName}));
 }
 </script>
-	</div>
-
+	<footer>
+		<p>Copyright &copy; 2016 AppData</p>
+	</footer>
+</div>
 </body>
 </html>

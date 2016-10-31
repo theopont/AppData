@@ -1,8 +1,17 @@
 @CHARSET "ISO-8859-1";
-footer {display: block;}
+header,footer {
+	padding: 1em;
+    color: white;
+    background-color: black;
+    clear: left;
+    text-align: center;
+	}
+	
 h1{color: orange;}
 .mainStyle{color: blue; font-size: 25px; font}
 .erro{color: red;}
+
+
 
 table, th, td {border: 1px solid black;
                border-collapse: collapse;
