@@ -6,6 +6,40 @@ header,footer {
     clear: left;
     text-align: center;
 	}
+footer {
+	bottom:0px;
+    position:fixed;
+    width: 100%;
+	}
+	nav ul {
+    	list-style-type: none;
+    	margin: 0;
+    	padding: 0;
+    	overflow: hidden;
+    	background-color: #333;
+    	//position: fixed;
+    	top: 0;
+    	width: 100%;
+	}
+
+	nav li {
+    	float: left;
+    	//display: inline;
+	}
+
+	nav li a {
+    	display: block;
+    	color: white;
+    	text-align: center;
+    	padding: 14px 16px;
+    	text-decoration: none;
+	}
+
+	nav li a:hover {
+    	background-color: #111;
+    	color: green;
+	}	
+
 	
 h1{color: orange;}
 .mainStyle{color: blue; font-size: 25px; font}
@@ -15,7 +49,8 @@ h1{color: orange;}
 
 table, th, td {border: 1px solid black;
                border-collapse: collapse;
-               al}
+               al;
+               margin-top: 2px;}
                
 table#login tr, th, td{border : 0px}
 table#loginSubmit td{rowspan:"3";  align:"center"}
