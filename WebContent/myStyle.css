@@ -5,6 +5,7 @@ header,footer {
     background-color: black;
     clear: left;
     text-align: center;
+    margin: 0;
 	}
 footer {
 	bottom:0px;

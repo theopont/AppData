@@ -18,13 +18,35 @@
 
 	
 </style>
-
+<script>
+	function formSubmit() {
+		var firstName = document.getElementById("userName").value;
+  		var lastName = document.getElementById("passwd").value;
+		
+  		var xhttp = new XMLHttpRequest();
+  		xhttp.onreadystatechange = function() {
+    		if (this.readyState == 4 && this.status == 200) {
+      			var json = JSON.parse(this.responseText)
+      			var text = ""
+      			for (var i = 0; i < json.length; i++) {
+        			text += "<p>" + json[i].userName + " " + json[i].passwd + "</p>"
+      			}
+      			document.getElementById("demo").innerHTML = text
+    		}
+  		};
+  		xhttp.open("POST", "/restService/rest/HelloWorld/person/1", true);
+  		xhttp.setRequestHeader("Content-Type", "application/json");
+  		xhttp.send(JSON.stringify({userName:userName, passwdName:passwdName}));
+	}
+</script>
 </head>
 <body class="mainStyle">
 	<div>
+	<!--
 		<header>
-   <h1>AppData</h1>
-</header>
+   			<h1>AppData</h1>
+		</header>
+	  -->
 		<nav>
 		<ul>
 			<li> <a href="#login"> Login </a> </li>
@@ -32,9 +54,6 @@
 			<li> <a href="#link"> Link 3 </a> </li>
 		</ul> 
 		</nav>
-		
-		
-		
 		<form id="form" name="form">
 		<table data-role="table" id="login">
 		<thead>
@@ -60,27 +79,6 @@
 	</table>
 	</form>
 	
-	<script>
-function formSubmit() {
-  var firstName = document.getElementById("userName").value;
-  var lastName = document.getElementById("passwd").value;
-		
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      var json = JSON.parse(this.responseText)
-      var text = ""
-      for (var i = 0; i < json.length; i++) {
-        text += "<p>" + json[i].userName + " " + json[i].passwd + "</p>"
-      }
-      document.getElementById("demo").innerHTML = text
-    }
-  };
-  xhttp.open("POST", "/restService/rest/HelloWorld/person/1", true);
-  xhttp.setRequestHeader("Content-Type", "application/json");
-  xhttp.send(JSON.stringify({userName:userName, passwdName:passwdName}));
-}
-</script>
 	<footer>
 		<p>Copyright &copy; 2016 AppData</p>
 	</footer>
